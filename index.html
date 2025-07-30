@@ -164,9 +164,7 @@
           <a href="./healthpackeg.html" class="hover:text-blue-600"
             >Health Packages</a
           >
-          <a href="./TestFacilities.html" class="hover:text-blue-600"
-            >Test Facilities</a
-          >
+          <a href="#TestFacilities" class="hover:text-blue-600">Test Facilities</a>
           <select
             class="pl-1 pr-3 py-2 text-sm w-20 focus:outline-none focus:ring-2 focus:ring-blue-500"
             onchange="location = this.value;"
@@ -1768,7 +1766,100 @@
         </div>
       </div>
     </section>
+    <br />
+    <center>
+      <section id="TestFacilities" class="py-20 bg-gray-50">
+      <div class="max-w-7xl w-full" >
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">
+          Our Facilities
+        </h2>
 
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl border-t-4 border-blue-400"
+          >
+            <div class="flex items-center justify-center mb-4">
+              <svg
+                class="w-12 h-12 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v6l4 2"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">
+              HOME SAMPLE COLLECTION
+            </h3>
+            <p class="text-gray-600 text-center">
+              Get your samples collected within the convenience of your home, at
+              a time that suits you and easy payment options.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl border-t-4 border-green-400"
+          >
+            <div class="flex items-center justify-center mb-4">
+              <svg
+                class="w-12 h-12 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">
+              Online Reports
+            </h3>
+            <p class="text-gray-600 text-center">
+              View reports online and download them for future reference. Saves
+              your time and energy!
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl border-t-4 border-teal-400"
+          >
+            <div class="flex items-center justify-center mb-4">
+              <svg
+                class="w-12 h-12 text-teal-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">
+              Certifications and Accreditations of Biogen Labs.
+            </h3>
+            <p class="text-gray-600 text-center"></p>
+          </div>
+        </div>
+      </div>
+    </center>
+    </section>
+    <br />
     <!-- footer -->
     <footer class="bg-[#04261C] text-white px-8 py-12">
       <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -1936,8 +2027,25 @@
         });
       }
     </script>
-
     <script>
+      const toggleButton = document.getElementById("dropdownToggle");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      toggleButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("show");
+      });
+
+      // Close dropdown if clicked outside
+      window.addEventListener("click", function (e) {
+        if (
+          !toggleButton.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.remove("show");
+        }
+      });
+    </script>
+    <!-- <script>
       document.addEventListener("contextmenu", (event) =>
         event.preventDefault()
       );
@@ -1952,6 +2060,6 @@
           return false; // Ctrl+Shift+J
         if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) return false; // Ctrl+U
       };
-    </script>
+    </script> -->
   </body>
 </html>
